@@ -1,4 +1,4 @@
-#! /bin/bash
+#j /bin/bash
 
 if ! [ -x "$(command -v brew)" ]; then
   echo "Installing Homebrew..."
@@ -78,3 +78,4 @@ cp -r ./config/nvim ~/.config/nvim
 
 
 
+echo "Finished copying all configurations. Don't forget to restart the terminal"
