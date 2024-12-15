@@ -56,10 +56,14 @@ cp ./config/.tmux.conf ~/.tmux.conf
 tmux source ~/.tmux.conf
 
 
-echo "Copying neovim configurations..."
+echo "Copying neovim configurations:"
 if [ -f ~/.config/nvim/init.vim ]; then
     echo "Local neovim config already exists. Deleting..."
     rm -rf ~/.config/nvim
+fi
+if [[ -d ~/.local/share/nvim ]]; then
+    echo "Found local neovim cache directory. Deleting..."
+    rm -rf ~/.local/share/nvim
 fi
 
 cp -r ./config/nvim ~/.config/nvim
