@@ -40,10 +40,10 @@ if ! [ -x "$(command -v rg)" ]; then
     brew install ripgrep
 fi
 
-echo "Copying configurations..."
+echo "Copying tmux configurations..."
 if [ -f ~/.tmux.conf ]; then
-    echo "Local tmux config already exists. Moving to tmux.bak"
-    mv -f ~/.tmux.conf ~/.tmux.conf.bak
+    echo "Local tmux config already exists. Deleting..."
+    rm ~/.tmux.conf
 fi
 echo "Creating new tmux config..."
 if [[ ! -d ~/.config/tmux ]]; then
@@ -54,6 +54,15 @@ rm -rf ~/.config/tmux
 cp -r ./config/tmux ~/.config/tmux
 cp ./config/.tmux.conf ~/.tmux.conf
 tmux source ~/.tmux.conf
+
+
+echo "Copying neovim configurations..."
+if [ -f ~/.config/nvim/init.vim ]; then
+    echo "Local neovim config already exists. Deleting..."
+    rm -rf ~/.config/nvim
+fi
+
+cp -r ./config/nvim ~/.config/nvim
 
 # if [[ -d ~/.zshrc ]]; then
 #     echo "Local .zshrc already exists. Moving to .zshrc.bak"
