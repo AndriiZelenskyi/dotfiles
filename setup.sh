@@ -64,6 +64,7 @@ fi
 if [[ -d ~/.local/share/nvim ]]; then
     echo "Found local neovim cache directory. Deleting..."
     rm -rf ~/.local/share/nvim
+    rm -rf ~/.local/state/nvim
 fi
 
 cp -r ./config/nvim ~/.config/nvim
