@@ -1,4 +1,4 @@
-#j /bin/bash
+#!/bin/bash
 
 if ! [ -x "$(command -v brew)" ]; then
   echo "Installing Homebrew..."
