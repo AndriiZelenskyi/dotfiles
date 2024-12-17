@@ -82,7 +82,7 @@ if [[ -d ~/.local/share/nvim ]]; then
     rm -rf ~/.local/state/nvim
 fi
 
-cp -r ./config/nvim ~/.config/nvim
+cp -r ./config/nvim ~/.config
 
 # if [[ -d ~/.zshrc ]]; then
 #     echo "Local .zshrc already exists. Moving to .zshrc.bak"
