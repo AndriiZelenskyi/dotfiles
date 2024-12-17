@@ -40,6 +40,21 @@ if ! [ -x "$(command -v rg)" ]; then
     brew install ripgrep
 fi
 
+if ! [ -x "$(command -v kitty)" ]; then
+    echo "Installing Kitty"
+    brew install kitty
+fi
+
+if ! [ -x "$(command -v lazygit)" ]; then
+    echo "Installing LazyGit..."
+    brew install lazygit
+fi
+
+if ! [ -x "$(command -v yazi)" ]; then
+    echo "Installing Yazi..."
+    brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide imagemagick font-symbols-only-nerd-font
+fi
+
 echo "Copying tmux configurations..."
 if [ -f ~/.tmux.conf ]; then
     echo "Local tmux config already exists. Deleting..."
