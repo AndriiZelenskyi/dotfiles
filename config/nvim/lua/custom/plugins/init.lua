@@ -24,7 +24,7 @@ return {
       {
         '<leader>f',
         function()
-          require('conform').format { async = false, lsp_format = 'fallback' }
+          require('conform').format { async = true, lsp_format = 'never' }
         end,
         mode = '',
         desc = '[F]ormat buffer',
@@ -50,6 +50,7 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        json = { 'jq' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -75,6 +76,16 @@ return {
       vim.keymap.set('n', '<Leader>ls', require('auto-session.session-lens').search_session, {
         noremap = true,
       })
+    end,
+  },
+  {
+    'napmn/react-extract.nvim',
+    config = function()
+      require('react-extract').setup()
+    end,
+    init = function()
+      vim.keymap.set({ 'v' }, '<Leader>rfe', require('react-extract').extract_to_new_file)
+      vim.keymap.set({ 'v' }, '<Leader>re', require('react-extract').extract_to_current_file)
     end,
   },
 }
