@@ -8,6 +8,6 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 
 -- Eslint
-vim.keymap.set('n', '<leader>fe', function()
-  vim.cmd 'EslintFixAll'
-end, { desc = '[F]ix [E]slint' })
+-- vim.keymap.set('n', '<leader>fe', function()
+--   vim.cmd 'EslintFixAll'
+-- end, { desc = '[F]ix [E]slint' })

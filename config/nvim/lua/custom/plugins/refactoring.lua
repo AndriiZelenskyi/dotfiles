@@ -37,7 +37,7 @@ return {
     -- You can also use below = true here to to change the position of the printf
     -- statement (or set two remaps for either one). This remap must be made in normal mode.
     vim.keymap.set('n', '<leader>pp', function()
-      require('refactoring').debug.printf { below = false }
+      require('refactoring').debug.printf { below = true }
     end)
 
     -- Print var
