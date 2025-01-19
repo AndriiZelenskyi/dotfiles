@@ -36,16 +36,16 @@ return { -- Autoformat
       sh = { 'shfmt' },
       toml = { 'taplo' },
       yaml = { 'yamlfix' },
-      html = { 'superhtml' },
+      html = { 'prettier' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { 'prettier', 'prettierd', 'eslint_d', stop_after_first = true },
-      javascript = { 'eslint_d' },
-      typescript = { 'eslint_d' },
-      javascriptreact = { 'eslint_d' },
-      typescriptreact = { 'eslint_d' },
+      javascript = { 'eslint_d', 'prettier' },
+      typescript = { 'eslint_d', 'prettier' },
+      javascriptreact = { 'eslint_d', 'prettier' },
+      typescriptreact = { 'eslint_d', 'prettier' },
     },
   },
 }
