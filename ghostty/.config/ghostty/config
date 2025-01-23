@@ -1,0 +1,10 @@
+theme = catppuccin-latte
+
+cursor-style = block
+cursor-style-blink = true
+
+shell-integration-features = no-cursor
+shell-integration = zsh
+
+font-family = "JetBrains Mono"
+

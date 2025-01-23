@@ -10,6 +10,11 @@ if [[ ! -d /Applications/iTerm.app ]]; then
 	brew install --cask iterm2
 fi
 
+if [[ ! -d /Applications/Ghostty.app ]]; then
+	echo "Installing Ghostty..."
+	brew install --cask ghostty
+fi
+
 if ! [ -x "$(command -v git)" ]; then
 	echo "Installing Git..."
 	brew install git
