@@ -39,4 +39,11 @@ return {
       vim.keymap.set({ 'v' }, '<Leader>re', require('react-extract').extract_to_current_file)
     end,
   },
+  {
+    'FabijanZulj/blame.nvim',
+    lazy = false,
+    config = function()
+      require('blame').setup {}
+    end,
+  },
 }
