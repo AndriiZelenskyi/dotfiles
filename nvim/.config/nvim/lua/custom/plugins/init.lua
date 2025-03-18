@@ -30,16 +30,6 @@ return {
     end,
   },
   {
-    'napmn/react-extract.nvim',
-    config = function()
-      require('react-extract').setup()
-    end,
-    init = function()
-      vim.keymap.set({ 'v' }, '<Leader>rfe', require('react-extract').extract_to_new_file)
-      vim.keymap.set({ 'v' }, '<Leader>re', require('react-extract').extract_to_current_file)
-    end,
-  },
-  {
     'FabijanZulj/blame.nvim',
     lazy = false,
     config = function()
