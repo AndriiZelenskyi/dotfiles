@@ -6,5 +6,4 @@ cursor-style-blink = true
 shell-integration-features = no-cursor
 shell-integration = zsh
 
-font-family = "JetBrains Mono"
 

@@ -671,6 +671,8 @@ require('lazy').setup({
             require('lspconfig')[server_name].setup(server)
           end,
         },
+        automatic_enable = false, -- removes multiple lsp servers
+        automatic_install = true,
       }
     end,
   },

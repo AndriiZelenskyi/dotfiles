@@ -7,5 +7,6 @@ return {
       enable = true,
       filetypes = { 'javascriptreact', 'typescriptreact' },
     },
+    tsserver_max_memory = '5512',
   },
 }

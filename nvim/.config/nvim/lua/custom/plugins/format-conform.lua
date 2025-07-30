@@ -45,10 +45,10 @@ return { -- Autoformat
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { 'prettier', 'prettierd', 'eslint_d', stop_after_first = true },
-      javascript = { 'eslint_d', 'prettier' },
-      typescript = { 'eslint_d', 'prettier' },
-      javascriptreact = { 'eslint_d', 'prettier' },
-      typescriptreact = { 'eslint_d', 'prettier' },
+      javascript = { 'biome', 'eslint_d', 'prettier' },
+      typescript = { 'biome', 'eslint_d', 'prettier' },
+      javascriptreact = { 'biome', 'eslint_d', 'prettier' },
+      typescriptreact = { 'biome', 'eslint_d', 'prettier' },
     },
   },
 }
