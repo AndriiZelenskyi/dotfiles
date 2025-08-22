@@ -36,10 +36,10 @@ return { -- Autoformat
       sh = { 'shfmt' },
       toml = { 'taplo' },
       yaml = { 'yamlfix' },
-      html = { 'prettier' },
-      css = { 'prettier' },
-      scss = { 'prettier' },
-      svg = { 'prettier' },
+      html = { 'biome', 'prettier' },
+      css = { 'biome', 'prettier' },
+      scss = { 'biome', 'prettier' },
+      svg = { 'biome', 'prettier' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --

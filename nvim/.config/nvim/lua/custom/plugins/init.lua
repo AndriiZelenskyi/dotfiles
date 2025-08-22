@@ -8,26 +8,24 @@ return {
     name = 'catppuccin',
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme 'catppuccin-latte'
+      vim.cmd.colorscheme 'catppuccin-frappe'
     end,
   },
   {
     'rmagatti/auto-session',
-    config = function()
-      require('auto-session').setup {
-        auto_session_suppress_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
-        session_lens = {
-          buftypes_to_ignore = {},
-          load_on_setup = true,
-          theme_conf = { border = true },
-          previewer = false,
-        },
-      }
+    lazy = false,
+    keys = {
+      { '<leader>ws', '<cmd>SessionSearch<CR>', desc = 'Session search' },
+      { '<leader>wS', '<cmd>SessionSave<CR>', desc = 'Save session' },
+      { '<leader>wa', '<cmd>SessionToggleAutoSave<CR>', desc = 'Toggle autosave' },
+    },
 
-      vim.keymap.set('n', '<Leader>ls', require('auto-session.session-lens').search_session, {
-        noremap = true,
-      })
-    end,
+    ---enables autocomplete for opts
+    ---@module "auto-session"
+    ---@type AutoSession.Config
+    opts = {
+      suppressed_dirs = { '~/', '~/Downloads', '/' },
+    },
   },
   {
     'FabijanZulj/blame.nvim',

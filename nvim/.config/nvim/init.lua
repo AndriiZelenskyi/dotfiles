@@ -628,6 +628,14 @@ require('lazy').setup({
         -- eslint = {},
         --
 
+        html = {},
+        cssls = {
+          settings = {
+            css = { validate = true },
+            scss = { validate = true },
+            less = { validate = true },
+          },
+        },
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -661,6 +669,8 @@ require('lazy').setup({
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        automatic_installation = false,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -671,8 +681,6 @@ require('lazy').setup({
             require('lspconfig')[server_name].setup(server)
           end,
         },
-        automatic_enable = false, -- removes multiple lsp servers
-        automatic_install = true,
       }
     end,
   },

@@ -1,4 +1,4 @@
-theme = catppuccin-latte
+theme = catppuccin-frappe.conf
 
 cursor-style = block
 cursor-style-blink = true
@@ -6,4 +6,4 @@ cursor-style-blink = true
 shell-integration-features = no-cursor
 shell-integration = zsh
 
-
+window-decoration=none
