@@ -7,6 +7,10 @@ vim.keymap.set('n', '<leader>j', '<C-i>', { desc = 'Move cursor back to forward 
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 
+vim.keymap.set('n', '<leader>fi', function()
+  vim.cmd '!pnpm run lint --write --unsafe'
+end)
+
 -- Eslint
 -- vim.keymap.set('n', '<leader>fe', function()
 --   vim.cmd 'EslintFixAll'

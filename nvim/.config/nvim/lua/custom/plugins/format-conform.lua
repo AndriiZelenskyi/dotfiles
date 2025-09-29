@@ -50,5 +50,12 @@ return { -- Autoformat
       javascriptreact = { 'biome', 'eslint_d', 'prettier' },
       typescriptreact = { 'biome', 'eslint_d', 'prettier' },
     },
+    formatters = {
+      biome = {
+        command = 'node_modules/.bin/biome',
+        args = { 'check', '--write', '--unsafe', '--skip-parse-errors', '--stdin-file-path', '$FILENAME' },
+        stdin = true,
+      },
+    },
   },
 }

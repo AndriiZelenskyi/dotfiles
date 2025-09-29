@@ -609,6 +609,7 @@ require('lazy').setup({
         -- eslint = {},
         --
 
+        marksman = {},
         html = {},
         cssls = {
           settings = {
