@@ -4,13 +4,19 @@
 -- See the kickstart.nvim README for more information
 return {
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
+    'rebelot/kanagawa.nvim',
     init = function()
-      vim.cmd.colorscheme 'catppuccin-latte'
+      vim.cmd.colorscheme 'kanagawa'
     end,
   },
+  -- {
+  --   'catppuccin/nvim',
+  --   name = 'catppuccin',
+  --   priority = 1000,
+  --   init = function()
+  --     vim.cmd.colorscheme 'catppuccin-latte'
+  --   end,
+  -- },
   {
     'rmagatti/auto-session',
     lazy = false,

@@ -436,7 +436,6 @@ require('lazy').setup({
     end,
   },
 
-  -- LSP Plugins
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
@@ -583,7 +582,7 @@ require('lazy').setup({
       })
 
       -- Enable native LSP servers (configs live in lsp/ directory)
-      vim.lsp.enable { 'tsgo', 'lua_ls', 'cssls', 'html', 'marksman' }
+      vim.lsp.enable { 'tsgo', 'lua_ls', 'cssls', 'html', 'marksman', 'ocamllsp' }
 
       -- Mason: install tools and LSP servers
       require('mason').setup()
@@ -772,11 +771,11 @@ require('lazy').setup({
       })
 
       -- Ensure these parsers are installed
-      require('nvim-treesitter').install {
-        'bash', 'c', 'diff', 'html', 'lua', 'luadoc',
-        'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc',
-        'typescript', 'tsx',
-      }
+      -- require('nvim-treesitter').install {
+      --   'bash', 'c', 'diff', 'html', 'lua', 'luadoc',
+      --   'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc',
+      --   'typescript', 'tsx',
+      -- }
     end,
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
