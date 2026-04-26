@@ -2,6 +2,8 @@ theme = Kanagawa Wave
 
 cursor-style = block
 cursor-style-blink = true
+custom-shader = ~/.config/ghostty/shaders/cursor_sweep.glsl
+custom-shader-animation = true
 
 shell-integration-features = no-cursor
 shell-integration = zsh
