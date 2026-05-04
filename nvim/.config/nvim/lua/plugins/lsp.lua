@@ -13,6 +13,7 @@ return {
         'markdown_inline',
         'query',
         'regex',
+        'python',
       }
 
       -- Turn on highlighting per filetype
@@ -59,6 +60,8 @@ return {
           map('gD', vim.lsp.buf.declaration, 'Goto declaration')
           map('gI', vim.lsp.buf.implementation, 'Goto implementation')
           map('<leader>D', vim.lsp.buf.type_definition, 'Type definition')
+          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame symbol')
+          vim.keymap.set({ 'n', 'x' }, '<leader>ca', vim.lsp.buf.code_action, { buffer = args.buf, desc = '[C]ode [A]ction' })
 
           -- mini.pick-based pickers for symbols (requires mini.extra)
           map('<leader>ds', function()

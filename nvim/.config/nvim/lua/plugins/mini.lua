@@ -47,7 +47,20 @@ return {
       require('mini.statusline').setup { use_icons = true }
 
       -- Notifications (replaces vim.notify)
-      require('mini.notify').setup()
+      require('mini.notify').setup {
+        content = {
+          sort = function(notif_arr)
+            local kept = {}
+            for _, n in ipairs(notif_arr) do
+              local is_basedpyright_progress = n.data
+                and n.data.source == 'lsp_progress'
+                and n.data.client_name == 'basedpyright'
+              if not is_basedpyright_progress then table.insert(kept, n) end
+            end
+            return require('mini.notify').default_sort(kept)
+          end,
+        },
+      }
       vim.notify = require('mini.notify').make_notify()
 
       -- File explorer (open with `-` like oil.nvim style)
