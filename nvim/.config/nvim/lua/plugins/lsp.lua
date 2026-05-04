@@ -16,13 +16,31 @@ return {
         'python',
       }
 
-      -- Turn on highlighting per filetype
+      -- Turn on highlighting per filetype, auto-installing missing parsers
+      local function enable(bufnr)
+        if pcall(vim.treesitter.start, bufnr) then
+          vim.bo[bufnr].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
+      end
+
       vim.api.nvim_create_autocmd('FileType', {
         callback = function(args)
-          local ok = pcall(vim.treesitter.start, args.buf)
-          if ok then
-            vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          local bufnr = args.buf
+          local lang = vim.treesitter.language.get_lang(vim.bo[bufnr].filetype)
+          if not lang then return end
+
+          if not pcall(vim.treesitter.language.add, lang) then
+            require('nvim-treesitter').install(lang):await(function()
+              vim.schedule(function()
+                if vim.api.nvim_buf_is_valid(bufnr) then
+                  enable(bufnr)
+                end
+              end)
+            end)
+            return
           end
+
+          enable(bufnr)
         end,
       })
     end,
