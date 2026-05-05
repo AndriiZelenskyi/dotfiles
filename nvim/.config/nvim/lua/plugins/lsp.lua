@@ -14,6 +14,9 @@ return {
         'query',
         'regex',
         'python',
+        'javascript',
+        'typescript',
+        'tsx',
       }
 
       -- Turn on highlighting per filetype, auto-installing missing parsers
