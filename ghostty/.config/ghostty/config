@@ -1,4 +1,4 @@
-theme = Kanagawa Wave
+theme = light:Kanagawa Lotus,dark:Kanagawa Wave
 
 cursor-style = block
 cursor-style-blink = true

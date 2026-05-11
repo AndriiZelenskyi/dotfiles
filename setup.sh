@@ -65,4 +65,20 @@ if ! type -a stow >&2; then
 	brew install stow
 fi
 
+if ! [ -x "$(command -v dark-notify)" ]; then
+	echo "Installing dark-notify (drives tmux light/dark switching)..."
+	brew tap cormacrelf/tap
+	brew install cormacrelf/tap/dark-notify
+fi
+
+AGENT_SRC="$HOME/.config/tmux/com.user.tmux-theme-switcher.plist"
+AGENT_DST="$HOME/Library/LaunchAgents/com.user.tmux-theme-switcher.plist"
+if [ -f "$AGENT_SRC" ] && [ ! -L "$AGENT_DST" ]; then
+	echo "Linking tmux theme-switcher launchd agent..."
+	mkdir -p "$HOME/Library/LaunchAgents"
+	ln -sfn "$AGENT_SRC" "$AGENT_DST"
+	launchctl unload "$AGENT_DST" 2>/dev/null || true
+	launchctl load "$AGENT_DST"
+fi
+
 echo "Finished installing all dependencies. Start installing requried packages using stow"
