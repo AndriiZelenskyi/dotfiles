@@ -71,6 +71,16 @@ if ! [ -x "$(command -v dark-notify)" ]; then
 	brew install cormacrelf/tap/dark-notify
 fi
 
+SHADERS_DIR="$HOME/.config/ghostty/shaders"
+if [ ! -f "$SHADERS_DIR/cursor_sweep.glsl" ]; then
+	echo "Fetching ghostty cursor shaders (sahaj-b/ghostty-cursor-shaders)..."
+	mkdir -p "$SHADERS_DIR"
+	tmpdir=$(mktemp -d)
+	git clone --depth=1 https://github.com/sahaj-b/ghostty-cursor-shaders "$tmpdir/shaders"
+	cp "$tmpdir/shaders"/*.glsl "$SHADERS_DIR/"
+	rm -rf "$tmpdir"
+fi
+
 AGENT_SRC="$HOME/.config/tmux/com.user.tmux-theme-switcher.plist"
 AGENT_DST="$HOME/Library/LaunchAgents/com.user.tmux-theme-switcher.plist"
 if [ -f "$AGENT_SRC" ] && [ ! -L "$AGENT_DST" ]; then
